@@ -1,0 +1,143 @@
+body{
+    background-image: url('/bkgrd_01.jpg')
+    /*background-color: pink;*/
+}
+
+.main_content_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main_card_wrapper{
+    width:80%;
+    height:auto;
+    /*background-color: pink;*/
+    /*border:1px red solid;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_card_wrapper img{
+    width:100%;
+    object-fit: contain;
+}
+
+
+.photo_wrapper{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+
+
+.details_wrapper{
+    width:100%;
+    /*height: 20px;*/
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    justify-content: flex-end;
+    /*padding:10px auto;*/
+    background-color: white;
+    /*box-sizing: border-box;*/
+    /*border:1px red solid;*/
+
+}
+
+.details{
+    /*border:1px red solid;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+    font-size:.8em;
+    margin:5px;
+}
+
+#photo_caption{
+    font-family: 'Caveat', cursive;
+    font-size:1.2em;
+}
+
+box-icon{
+    width:17px;
+    margin-right: 5px;
+}
+
+
+.comments_wrapper{
+    width:100%;
+    background-color: rgba(255,255,255,.3);
+    /*margin:20px;*/
+    padding:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.comment_box{
+    width: 60%;
+    min-height: 50px;
+    background-color: white;
+    padding:5px;
+    /*margin: 5px;*/
+    font-family: 'Abel', sans-serif;
+    font-size: .9em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    /*border:1px solid grey;*/
+}
+
+.comment_box img{
+    width:30px;
+    height:30px;
+    margin-right: 10px;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+
+.comment{
+    /*width: 80%;*/
+    min-height: 25px;
+    background-color: #F2F3F5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:10px;
+    border-radius: 20px;
+}
+
+.comment_input{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /*border:1px red solid;*/
+    /*margin: 20px 0;*/
+    padding:10px;
+    background-color: rgba(255,255,255,.2);
+}
+
+textarea{
+    width:800px;
+    padding:10px;
+}
+
+.comment_input img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    margin:10px;
+    align-self: flex-start;
+}

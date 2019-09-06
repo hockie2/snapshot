@@ -1,0 +1,76 @@
+body{
+    background-image: url('/bkgrd_01.jpg')
+    /*background-color: pink;*/
+}
+
+.main_cards_wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*align-items: center;*/
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.cardBox_wrapper{
+    width:400px;
+    height:300px;
+    /*border:1px grey solid;*/
+    margin: 10px;
+    padding:0;
+    background-color: white;
+}
+
+.cardBox_wrapper:hover{
+    box-shadow: 0 0 20px #dcdcfc;
+    border:0.5px solid grey;
+    transform: translateY(-5px);
+    transition: .8s;
+}
+
+.cardBox_wrapper img{
+    width:100%;
+    height:200px;
+    object-fit: cover;
+    margin:0;
+}
+
+
+.photo_wrapper{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details_wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:10px;
+
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Abel', sans-serif;
+    font-size:.8em;
+}
+
+#photo_caption{
+    font-family: 'Caveat', cursive;
+    font-size:1.2em;
+}
+
+box-icon{
+    width:17px;
+    margin-right: 5px;
+}
+
