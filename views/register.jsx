@@ -34,7 +34,7 @@ class ShowRegisterForm extends React.Component {
                            <form enctype="multipart/form-data" action="/register/" method="POST">
                                 <p>Username</p><input name="username"></input>
                                 <p>Password</p><input name="password"></input>
-                                <p>Profile Image</p><input name="profile_pic"></input>
+                                <p>Profile Image</p><input name="public_id"></input>
                                   <input type="file" name="myFile"/>
                                   <input type="submit" name="submit" className="submitButton"/>
                             </form>

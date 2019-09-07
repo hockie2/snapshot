@@ -28,10 +28,10 @@ console.log("we are in the browser");
 
 ////////////////////////////////////////////////////////////////////////////////////////
 //comments fields
-var textarea = document.querySelector('textarea');
 
-textarea.addEventListener('keydown', autosize);
-
+if(textarea){
+    var textarea = document.querySelector('textarea');
+    textarea.addEventListener('keydown', autosize);
 function autosize(){
   var el = this;
   setTimeout(function(){
@@ -43,6 +43,7 @@ function autosize(){
 }
 
 document.getElementById("comment_textarea").addEventListener("keypress", submitOnEnter);
+}
 
 function submitOnEnter(event){
     if(event.which === 13){
@@ -55,5 +56,26 @@ function submitOnEnter(event){
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////
+
+let editbutton = document.querySelector('#edit');
+editbutton.addEventListener('click', function(event){
+
+       document.getElementById("editform").submit();
+
+})
+//////////////////////////////////////////////////////////////////////////////////////
+let deletebutton = document.querySelector('#delete');
+deletebutton.addEventListener('click', function(event){
+
+var result = confirm("Are you sure to delete?");
+    if(result){
+       document.getElementById("deleteform").submit();
+    }
+})
 
 ////////////////////////////////////////////////////////////////////////////////////////
+
+function hey(){
+    console.log('HEHEHEHEHEHEHEHE')
+}

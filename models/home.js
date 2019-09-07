@@ -52,7 +52,7 @@ let getPhotos = (request, callback) => {
 /////////////////////////////////////////////////////////////////////////////////////
 let getDashPhotos = (username, callback) => {
     const query = `
-                    SELECT photos.id,photos.public_id,caption,camera,aperature,shutter,iso
+                    SELECT photos.id,photos.public_id,caption,camera,aperture,shutter,iso
                     FROM photos
                     INNER JOIN users
                     ON photos.belongs_to_user = users.id
@@ -78,7 +78,7 @@ let getDashPhotos = (username, callback) => {
 let getPhotoID = (photoID, callback) => {
 
     const id_query = `
-                    SELECT users.public_id AS user_public_id,photos.id,photos.public_id,caption,camera,aperature,shutter,iso
+                    SELECT users.public_id AS user_public_id,username,photos.id,photos.public_id,caption,camera,aperture,shutter,iso
                     FROM photos INNER JOIN users ON users.id = photos.belongs_to_user
                     WHERE photos.id = '${photoID}'`;
 
@@ -115,29 +115,75 @@ let getPhotoIDcomments = (photoID, callback) => {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
-// let postComment = (postId,ownername,comment, callback) => {
+let getPhotographer = (username, callback) => {
 
-//     const ownername_query = `SELECT id FROM owners WHERE ownername='${ownername}'`;
+    const username_query = `SELECT users.public_id AS user_public_id, username, photos.id, photos.public_id, caption, camera, aperture, shutter,iso FROM photos
+                            INNER JOIN users ON photos.belongs_to_user = users.id
+                             WHERE username='${username}'`;
 
-//     dbPoolInstance.query(ownername_query,(error, queryResult_id) => {
+    dbPoolInstance.query(username_query,(error, queryResult) => {
+
+        // console.log(queryResult.rows)
+        if( error ){
+            // invoke callback function with results after query has executed
+            console.log('ERROR!!!')
+            callback(error, null);
+              }
+        else{
+            callback(error, queryResult.rows);
+        }
+
+})
+}
+/////////////////////////////////////////////////////////////////////////////////////
+let delPhoto = (photoID, callback) => {
+
+    const id_query = `DELETE FROM photos WHERE id = $1 RETURNING id`;
+    let values = [photoID]
+
+    dbPoolInstance.query(id_query, values,(error, queryResult) => {
+
+        if( error ){
+                // invoke callback function with results after query has executed
+                console.log('ERROR!!!')
+                callback(error, null);
+              }
+        else{
+                // console.log("In DELETE")
+                callback(error, queryResult.rows);
+        }
+    })
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+let editPhoto = (photoID, callback) => {
+
+    const id_query = `
+                    SELECT users.public_id AS user_public_id, username, photos.id, photos.public_id, caption, camera, aperture, shutter, iso
+                    FROM photos
+                    INNER JOIN users
+                    ON users.id = photos.belongs_to_user
+                    WHERE photos.id = '${photoID}'`;
+
+    dbPoolInstance.query(id_query ,(error, queryResult) => {
+
+            if( error ){
+                // invoke callback function with results after query has executed
+                callback(error, null);
+            }
+            else{
+                callback(error, queryResult.rows);
+            }
+})
+}
 
 
-//     const query = `INSERT INTO comments(comment,onhome,by_owner) VALUES($1,$2,$3)`;
-//     let values = [comment,postId,queryResult_id.rows[0].id];
-//     dbPoolInstance.query(query,values,(error, queryResult) => {
 
-//         // console.log(queryResult.rows)
-//         if( error ){
-//             // invoke callback function with results after query has executed
-//             console.log('ERROR!!!')
-//             callback(error, null);
-//               }
-//         else{
-//             callback(error, queryResult.rows);
-//         }
-//     })
-// })
-// }
+
+
+
+
+
 
 
 
@@ -510,7 +556,11 @@ let contractorInfo = (postId, callback) => {
     getPhotos,
     getDashPhotos,
     getPhotoID,
-    getPhotoIDcomments
+    getPhotoIDcomments,
+
+    getPhotographer,
+    delPhoto,
+    editPhoto
 
 
 

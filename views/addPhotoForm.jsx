@@ -31,12 +31,16 @@ class AddPhotoForm extends React.Component {
                         <h2>AddPhotoForm</h2>
 
                         <div id="form_wrapper">
-                           <form enctype="multipart/form-data" action="/register/" method="POST">
-                                <p>Username</p><input name="username"></input>
-                                <p>Password</p><input name="password"></input>
-                                <p>Profile Image</p><input name="profile_pic"></input>
-                                  <input type="file" name="myFile"/>
-                                  <input type="submit" name="submit" className="submitButton"/>
+                            <form enctype="multipart/form-data" action="/register/" method="POST">
+                                <p>Profile Image</p><input name="public_id"></input>
+                                <input type="file" name="myFile"/>
+                                <p>Caption</p><input name="caption"></input>
+                                <p>Camera used</p><input name="camera"></input>
+                                <p>Aperture</p><input name="aperture"></input>
+                                <p>Shutter</p><input name="shutter"></input>
+                                <p>ISO</p><input name="iso"></input>
+                                <br/>
+                                <input type="submit" name="submit" className="submitButton"/>
                             </form>
 
                         </div>

@@ -17,12 +17,12 @@ class Gallery extends React.Component {
                         <img src={cloudinary.url(photo.public_id)} />
                         <span className="details" id="photo_caption">{photo.caption}</span>
                     </div>
-                    <div className="details_wrapper">
+                    {/*<div className="details_wrapper">
                         <span className="details"><box-icon name='camera' ></box-icon>{photo.camera}</span>
                         <span className="details"><box-icon name='aperture'></box-icon>{photo.aperature}</span>
                         <span className="details"><box-icon name='timer'></box-icon>{photo.shutter}</span>
                         <span className="details"><box-icon name='disc' ></box-icon>{photo.iso}</span>
-                    </div>
+                    </div>*/}
                 </div>
             </a>
         )
@@ -45,6 +45,7 @@ class Gallery extends React.Component {
                   {cards}
               </div>
           </div>
+          <footer>*This is a student project. Photographs used are properties of their individual photographers and are not of mine.</footer>
           <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
           <script src="/script.js"></script>
           </body>

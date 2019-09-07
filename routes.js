@@ -33,26 +33,26 @@ module.exports = (app, allModels) => {
     app.post('/login', accountsControllerCallbacks.login);
     app.get('/logout', accountsControllerCallbacks.logout);
 
-
-    app.get('/gallery', homeControllerCallbacks.gallery);
-    app.get('/gallery/:id', homeControllerCallbacks.photoID);
     app.get('/dashboard', homeControllerCallbacks.dashboard);
 
-
+    app.get('/gallery', homeControllerCallbacks.gallery);
     app.get('/gallery/addphoto', homeControllerCallbacks.addPhotoForm);
+    app.get('/gallery/:id', homeControllerCallbacks.photoID);
+    app.get('/photographer/:username', homeControllerCallbacks.photographer);
+
+    app.delete('/gallery/:id', homeControllerCallbacks.deletePhoto);
+    app.get('/gallery/:id/edit', homeControllerCallbacks.editPhoto);
+
+
+    // app.get('/gallery/:id/delete', homeControllerCallbacks.getDeletePhoto);
+
+
+
+
     // app.post('/myhome/', homeControllerCallbacks.addHomePost);
 
-
-
-    // app.post('/gallery/:id/', homeControllerCallbacks.postComment);
-
-
-
-    // app.get('/myhome/:id/edit', homeControllerCallbacks.editHomePost);
     // app.put('/myhome/:id/', homeControllerCallbacks.updateHomePost);
 
-    // app.get('/myhome/:id/delete', homeControllerCallbacks.getDeleteHomePost);
-    // app.delete('/myhome/:id', homeControllerCallbacks.deleteHomePost);
 
 
 

@@ -5,12 +5,14 @@ var Navbar = require('./components/navbar.jsx');
 
 
 class PhotoID extends React.Component {
+
+
   render() {
+
 
     var post_comment = "/photoID/"+this.props.phototId +"?_method=POST";
 
-
-    console.log(this.props.comments);
+    // console.log(this.props.comments);
     let comments = this.props.comments.map(comment=>{
         return <div className="comment_box">
                     <img src={cloudinary.url(comment.public_id)} />
@@ -36,12 +38,20 @@ class PhotoID extends React.Component {
                         <img src={cloudinary.url(this.props.photos.public_id)} />
                         <span className="details" id="photo_caption">{this.props.photos.caption}</span>
                     </div>
-                    <div className="details_wrapper">
-                        <span className="details"><box-icon name='camera' ></box-icon>{this.props.photos.camera}</span>
-                        <span className="details"><box-icon name='aperture'></box-icon>{this.props.photos.aperature}</span>
-                        <span className="details"><box-icon name='timer'></box-icon>{this.props.photos.shutter}</span>
-                        <span className="details"><box-icon name='disc' ></box-icon>{this.props.photos.iso}</span>
+                    <div className="details_main_wrapper">
+                        <div className="photographer">
+                            <span id="photographer_label">Photographer:</span>
+                            <a href={"/photographer/"+ this.props.photos.username}><span className="details">{this.props.photos.username}</span></a>
+                        </div>
+                        <div className="details_wrapper">
+                            <span className="details"><box-icon name='camera' ></box-icon>{this.props.photos.camera}</span>
+                            <span className="details"><box-icon name='aperture'></box-icon>{this.props.photos.aperature}</span>
+                            <span className="details"><box-icon name='timer'></box-icon>{this.props.photos.shutter}</span>
+                            <span className="details"><box-icon name='disc' ></box-icon>{this.props.photos.iso}</span>
+                        </div>
                     </div>
+                    <a href="javascript:history.back(-1)" id="back"><box-icon name='left-arrow' type='solid' color='#ffffff' ></box-icon>BACK</a>
+
                 </div>
                 <div className="comment_input">
                     <img src={cloudinary.url(this.props.photos.user_public_id)} />

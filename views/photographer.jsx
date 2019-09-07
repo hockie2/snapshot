@@ -3,35 +3,22 @@ const cloudinary = require('cloudinary').v2;
 
 var Navbar = require('./components/navbar.jsx');
 
-class Gallery extends React.Component {
+
+class Photographer extends React.Component {
   render() {
-    // console.log(this.props.photos.id);
-        // var edit_url = "/gallery/"+this.props.photos.id + "/edit";
-        // var delete_url = "/gallery/"+this.props.photos.id +"?_method=DELETE";
+
+    // console.log(this.props.photos);
 
     const cards = this.props.photos.map(photo =>{
-
-
          return (
-
+            <a href={`/gallery/${photo.id}`}>
                 <div className = "cardBox_wrapper">
-                    <a href={`/gallery/${photo.id}`}>
-                        <div className="photo_wrapper">
-                            <img src={cloudinary.url(photo.public_id)} />
-                            <span className="details" id="photo_caption">{photo.caption}</span>
-                        </div>
-                    </a>
-                    <div className="controls">
-                        <form action={"/gallery/"+photo.id + "/edit"} method="PUT" id="editform">
-                            <button type="submit" value="Edit" id="edit" >Edit</button>
-                        </form>
-                        <form action={"/gallery/"+photo.id +"?_method=DELETE"} method="POST" id="deleteform">
-                            <button type="submit" value="Delete" id="delete" >Delete</button>
-                        </form>
+                    <div className="photo_wrapper">
+                        <img src={cloudinary.url(photo.public_id)} />
+                        <span className="details" id="photo_caption">{photo.caption}</span>
                     </div>
                 </div>
-
-
+            </a>
         )
     })
 
@@ -62,4 +49,4 @@ class Gallery extends React.Component {
   }
 }
 
-module.exports = Gallery;
+module.exports = Photographer;

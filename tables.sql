@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS photos (
     caption TEXT,
     belongs_to_user INTEGER,
     camera TEXT,
-    aperature TEXT,
+    aperture TEXT,
     shutter TEXT,
     iso TEXT
 );
