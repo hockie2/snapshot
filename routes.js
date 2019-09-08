@@ -37,21 +37,25 @@ module.exports = (app, allModels) => {
 
     app.get('/gallery', homeControllerCallbacks.gallery);
     app.get('/gallery/addphoto', homeControllerCallbacks.addPhotoForm);
+    app.post('/gallery', upload.single('myFile'), homeControllerCallbacks.addPhoto);
+
     app.get('/gallery/:id', homeControllerCallbacks.photoID);
+
+
     app.get('/photographer/:username', homeControllerCallbacks.photographer);
 
     app.delete('/gallery/:id', homeControllerCallbacks.deletePhoto);
     app.get('/gallery/:id/edit', homeControllerCallbacks.editPhoto);
+    app.put('/gallery/:id/', homeControllerCallbacks.updatePhoto);
 
+    app.post('/gallery/:id/', homeControllerCallbacks.postComment);
 
     // app.get('/gallery/:id/delete', homeControllerCallbacks.getDeletePhoto);
 
 
 
 
-    // app.post('/myhome/', homeControllerCallbacks.addHomePost);
 
-    // app.put('/myhome/:id/', homeControllerCallbacks.updateHomePost);
 
 
 

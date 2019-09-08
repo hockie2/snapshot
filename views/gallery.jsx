@@ -44,10 +44,10 @@ class Gallery extends React.Component {
               <div className="main_cards_wrapper">
                   {cards}
               </div>
-          </div>
-          <footer>*This is a student project. Photographs used are properties of their individual photographers and are not of mine.</footer>
-          <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-          <script src="/script.js"></script>
+            </div>
+            <footer>*This is a student project. Photographs used are properties of their individual photographers and are not of mine.</footer>
+            <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+            <script src="/script.js"></script>
           </body>
       </html>
     );

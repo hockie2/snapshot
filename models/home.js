@@ -29,7 +29,7 @@ let userProfilePic = (username, callback) => {
 }
 /////////////////////////////////////////////////////////////////////////////////////
 let getPhotos = (request, callback) => {
-    const query = `SELECT * FROM photos`;
+    const query = `SELECT * FROM photos ORDER BY id DESC`;
 
     dbPoolInstance.query(query, (error, queryResult) => {
     // console.log(queryResult)
@@ -56,7 +56,7 @@ let getDashPhotos = (username, callback) => {
                     FROM photos
                     INNER JOIN users
                     ON photos.belongs_to_user = users.id
-                    WHERE users.username = '${username}'`;
+                    WHERE users.username = '${username}' ORDER BY id DESC`;
 
     dbPoolInstance.query(query, (error, queryResult) => {
     // console.log(queryResult.rows)
@@ -176,9 +176,78 @@ let editPhoto = (photoID, callback) => {
             }
 })
 }
+/////////////////////////////////////////////////////////////////////////////////////
+let updatePhoto = (caption,camera,aperture,shutter,iso,photoID, callback) => {
+
+    // console.log(url)
+
+    const query = `UPDATE photos SET caption=$1, camera=$2, aperture=$3, shutter=$4, iso=$5 WHERE id = $6 RETURNING id`;
+    let values = [caption,camera,aperture,shutter,iso,photoID]
+
+    dbPoolInstance.query(query, values,(error, queryResult) => {
+
+        if( error ){
+            // invoke callback function with results after query has executed
+            console.log('ERROR!!!')
+            callback(error, null);
+        }
+        else{
+            callback(error, queryResult.rows);
+        }
+    })
+}
+/////////////////////////////////////////////////////////////////////////////////////
+let addPhoto = (public_id,caption,camera,aperture,shutter,iso,user_id, callback) => {
+
+    const query = `INSERT INTO photos(public_id,caption, camera, aperture, shutter, iso, belongs_to_user) VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
+    let values = [public_id,caption,camera,aperture,shutter,iso,user_id]
+
+    dbPoolInstance.query(query, values,(error, queryResult) => {
+
+        console.log('HEEEEEEEEEEEEEEE')
+        // console.log(queryResult)
+        if( error ){
+            // invoke callback function with results after query has executed
+            console.log('ERROR!!!')
+            callback(error, null);
+        }
+         else {
+            if (queryResult.rows.length > 0) {
+                callback(null, queryResult.rows);
+            } else {
+                callback(null, null);
+            }
+        }
+    })
 
 
 
+}
+/////////////////////////////////////////////////////////////////////////////////////
+let postComment = (photoID,username,comment, callback) => {
+
+    const username_query = `SELECT id FROM users WHERE username='${username}' `;
+
+    dbPoolInstance.query(username_query,(error, queryResult_id) => {
+        let user_id = queryResult_id.rows[0].id
+
+        // console.log(queryResult_id.rows[0].id)
+    const query = `INSERT INTO comments(comment,belongs_to_photo,comment_by_user) VALUES($1,$2,$3)`;
+    let values = [comment,photoID,user_id];
+    dbPoolInstance.query(query,values,(error, queryResult) => {
+
+        // console.log(queryResult.rows)
+        if( error ){
+            // invoke callback function with results after query has executed
+            console.log('ERROR!!!')
+            callback(error, null);
+              }
+        else{
+            callback(error, queryResult.rows);
+        }
+    })
+})
+}
 
 
 
@@ -328,30 +397,7 @@ let myHomeComments = (postId,callback) => {
             }
     })
 }
-/////////////////////////////////////////////////////////////////////////////////////
-let postComment = (postId,ownername,comment, callback) => {
 
-    const ownername_query = `SELECT id FROM owners WHERE ownername='${ownername}'`;
-
-    dbPoolInstance.query(ownername_query,(error, queryResult_id) => {
-
-
-    const query = `INSERT INTO comments(comment,onhome,by_owner) VALUES($1,$2,$3)`;
-    let values = [comment,postId,queryResult_id.rows[0].id];
-    dbPoolInstance.query(query,values,(error, queryResult) => {
-
-        // console.log(queryResult.rows)
-        if( error ){
-            // invoke callback function with results after query has executed
-            console.log('ERROR!!!')
-            callback(error, null);
-              }
-        else{
-            callback(error, queryResult.rows);
-        }
-    })
-})
-}
 
 
 /////////////////////////////////////////////////////////////////////////////////////
@@ -375,76 +421,7 @@ let editHomePost = (postId, callback) => {
             }
 })
 }
-/////////////////////////////////////////////////////////////////////////////////////
-let updateHomePost = (postId,ownername,location,cost,url, callback) => {
 
-    // console.log(url)
-
-    const query1 = `UPDATE homes SET location = $1, cost = $2 WHERE id = $3 RETURNING id`;
-    let values = [location,cost,postId]
-
-    dbPoolInstance.query(query1, values,(error, queryResult) => {
-
-        if( error ){
-                // invoke callback function with results after query has executed
-                console.log('ERROR!!!')
-                callback(error, null);
-              }
-        else{
-            // update entry into images table
-            // console.log(url)
-            // get the rows that is home = 2
-            // do a loop for results.rows then check if results.rows[i].url === url[i], dont update
-            // if not equal then update
-            const getAllImage = `SELECT * FROM images WHERE home = '${postId}'`;
-
-            dbPoolInstance.query(getAllImage, (error, imageResult) => {
-
-                for (let i=0; i<imageResult.rows.length; i++) {
-                    // if (imageResult.rows[i].url === url[i]) {
-                    //     console.log("yes")
-                    // }
-                    // else {
-                        // console.log("no");
-                        // console.log(url[0])
-                        const query = `UPDATE images SET url = $1 WHERE home = $2 RETURNING id `;
-                        let values = [url[i],postId];
-
-                        // console.log(url[i])
-
-                         dbPoolInstance.query(query, values,(error, queryResult2) => {
-                        console.log(queryResult2.rows)
-
-                        if( error ){
-                            console.log('ERROR!!!')
-                        // invoke callback function with results after query has executed
-                        callback(error, null);
-                        }
-                        callback(error, queryResult2.rows);
-                        })
-
-                    // }
-                }
-
-            })
-            // for (var i = 0; i < url.length; i++) {
-            //     // console.log(url[i])
-            //    const query = `UPDATE images SET url = $1 WHERE home = $2 RETURNING id`;
-            //     let values = [url[i],postId];
-
-            //         dbPoolInstance.query(query, values,(error, queryResult2) => {
-            //             // console.log("In UPDATE")
-            //             if( error ){
-            //                 console.log('ERROR!!!')
-            //             // invoke callback function with results after query has executed
-            //             callback(error, null);
-            //           }
-            //             callback(error, queryResult2.rows);
-            //         })
-            // }
-        }
-    })
-}
 /////////////////////////////////////////////////////////////////////////////////////
 let getDeleteHomePost = (postId, callback) => {
 
@@ -559,8 +536,12 @@ let contractorInfo = (postId, callback) => {
     getPhotoIDcomments,
 
     getPhotographer,
+    addPhoto,
     delPhoto,
-    editPhoto
+    editPhoto,
+    updatePhoto,
+
+    postComment
 
 
 

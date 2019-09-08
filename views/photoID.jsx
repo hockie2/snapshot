@@ -10,7 +10,7 @@ class PhotoID extends React.Component {
   render() {
 
 
-    var post_comment = "/photoID/"+this.props.phototId +"?_method=POST";
+    var post_comment = "/gallery/"+this.props.photoID +"?_method=POST";
 
     // console.log(this.props.comments);
     let comments = this.props.comments.map(comment=>{
@@ -53,14 +53,16 @@ class PhotoID extends React.Component {
                     <a href="javascript:history.back(-1)" id="back"><box-icon name='left-arrow' type='solid' color='#ffffff' ></box-icon>BACK</a>
 
                 </div>
-                <div className="comment_input">
-                    <img src={cloudinary.url(this.props.photos.user_public_id)} />
-                    <form  method="POST" id="new_comment">
-                            <textarea action={post_comment} rows="5" cols="20" name="comment_textarea" id="comment_textarea"></textarea>
-                    </form>
-                </div>
-                <div className="comments_wrapper">
-                    {comments}
+                <div className="main_comment_wrapper">
+                    <div className="comment_input">
+                        <img src={cloudinary.url(this.props.userProfilePic)} />
+                        <form action={post_comment} method="POST" id="new_comment">
+                            <textarea rows="5" cols="20" name="comment_textarea" id="comment_textarea"></textarea>
+                        </form>
+                    </div>
+                    <div className="comments_wrapper">
+                        {comments}
+                    </div>
                 </div>
             </div>
           <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>

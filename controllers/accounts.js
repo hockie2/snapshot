@@ -38,6 +38,7 @@ module.exports = (db) => {
 //////////////////////////////////////////////////////////////////////////////
   let register = (request, response) => {
     // check if username exist in the table
+
         var username = request.body.username;
         var password = sha256(request.body.password);
 

@@ -1,0 +1,96 @@
+body{
+    background-image: url('https://www.brandenphoto.com/wp-content/uploads/2019/03/DSC_3908_1.jpg');
+    /*background-color: pink;*/
+    background-size:cover;
+}
+
+.main_wrapper{
+    width:100%;
+    height: 90%;
+    /*border:1px solid blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cards_wrapper{
+    width:60%;
+    height: 500px;
+    /*border:1px solid blue;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url('https://iso.500px.com/wp-content/uploads/2016/03/pedroquintela.jpg');
+    background-size: cover;
+    background-position: -150px;
+}
+
+form{
+    /*border:1px solid red;*/
+    width: 400px;
+    height: 300px;
+    /*height: 100%;*/
+    padding:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    font-family: 'Bevan', cursive;
+    background-color: #2e2e2e;
+    position: absolute;
+    right:40px;
+    box-shadow: 0 0 20px black;
+}
+
+p{
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+input{
+    background-color: grey;
+    border:1px #00dcff solid;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.5em;
+    padding: 0 10px;
+}
+
+.submitButton{
+    width:100px;
+    height:30px;
+    background-color: orange;
+    border:1px solid pink;
+    color: white;
+    font-size: .9em;
+    font-family: 'Bevan', cursive;
+    margin: 20px 0;
+
+}
+
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Choose File';
+  display: inline-block;
+  background-color: white;
+  border-radius: 3px;
+  padding: 5px 8px;
+  color:black;
+  /*white-space: nowrap;*/
+  -webkit-user-select: none;
+  cursor: pointer;
+/*  text-shadow: 1px 1px #fff;*/
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

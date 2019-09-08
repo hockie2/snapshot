@@ -25,9 +25,11 @@ class Gallery extends React.Component {
                         <form action={"/gallery/"+photo.id + "/edit"} method="PUT" id="editform">
                             <button type="submit" value="Edit" id="edit" >Edit</button>
                         </form>
-                        <form action={"/gallery/"+photo.id +"?_method=DELETE"} method="POST" id="deleteform">
+                        <span>|</span>
+
                             <button type="submit" value="Delete" id="delete" >Delete</button>
-                        </form>
+                        <form action={"/gallery/"+photo.id +"?_method=DELETE"} method="POST" id="deleteform"/>
+
                     </div>
                 </div>
 

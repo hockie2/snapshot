@@ -1,9 +1,13 @@
-body{
-    margin:0;
+html, body {
+   margin:0;
+   padding:0;
+   height:100%;
 }
 
 .main_content_wrapper{
-    padding:10px 0 100px 0;
+    padding:10px 0 0 0;
+    /*border:1px red solid;*/
+
 }
 
 footer{
@@ -17,4 +21,6 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
+    bottom: 0;
 }

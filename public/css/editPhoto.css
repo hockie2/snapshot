@@ -47,8 +47,19 @@ img{
     /*background-color: white;*/
     /*border:1px solid red;*/
     object-fit: contain;
-    transform: rotate(-2deg);
+    align-self: flex-start;
+    animation-name: move;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    transform-origin: center center;
 
+}
+@keyframes move {
+    to {
+        transform: rotate(-2deg) translateY(20px);
+    }
 }
 
 

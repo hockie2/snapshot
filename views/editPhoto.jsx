@@ -9,7 +9,6 @@ class EditPhoto extends React.Component {
         // var edit_url = "/gallery/"+this.props.photos.id + "/edit";
         // var delete_url = "/gallery/"+this.props.photos.id +"?_method=DELETE";
 
-
     return (
       <html>
         <head>
@@ -27,7 +26,7 @@ class EditPhoto extends React.Component {
 
               <div className="main_cards_wrapper">
                     <img src={cloudinary.url(this.props.photos.public_id)} />
-                <form  method="POST">
+                <form action={"/gallery/"+this.props.photos.id + "?_method=PUT"} method="POST">
                     <p>Caption</p><input name="caption" defaultValue={this.props.photos.caption}></input>
                     <p>Camera</p><input name="camera" defaultValue={this.props.photos.camera}></input>
                     <p>Aperture</p><input name="aperture" defaultValue={this.props.photos.aperture}></input>
