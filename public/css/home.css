@@ -1,26 +1,237 @@
 html, body {
-   margin:0;
-   padding:0;
-   height:100%;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background-image: url('/bkgrd_01.jpg');
+    box-sizing: border-box;
+    scroll-snap-type: y proximity;
+    scroll-margin:300px 0;
+    /*scroll-padding:100px;*/
+    /*overflow-y: scroll;*/
+
+}
+
+#header_img{
+    width:100%;
+    object-fit: cover;
 }
 
 .main_content_wrapper{
     padding:10px 0 0 0;
     /*border:1px red solid;*/
-
-}
-
-footer{
     width:100%;
-    height: 20px;
-    background-color: black;
-    color: white;
-    font-family: 'Abel', sans-serif;
-    font-size: .8em;
-    padding:5px 20px;
+    min-height: 800px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: fixed;
-    bottom: 0;
+    box-sizing: border-box;
 }
+
+
+.threeDcamera_wrapper{
+    width:100%;
+    height: 80vh;
+    background-color:black;
+    margin: 20px 0;
+
+}
+
+
+
+h1{
+    /*display: inline-block;*/
+    font-size: 5em;
+    font-family: 'Anton', cursive;
+    line-height: .9;
+    margin:0;
+    color: #f73838;
+    /*border:1px solid blue;*/
+}
+
+.tabs{
+    width:100%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding:30px;
+    font-family: 'Abel', sans-serif;
+    margin:10px 0;
+    scroll-snap-align: start;
+    color: white;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    width:30vw;
+    /*height:500px;*/
+}
+
+.tabs p{
+    width:100%;
+    /*min-height:300px;*/
+    margin:0;
+    /*border:1px solid red;*/
+    font-size: 2vw;
+    background-color: rgba(0,0,0,.8);
+    padding:10px;
+    border-radius: 10px;
+}
+
+/*---SHUTTER STARTS------------------------------------------*/
+
+#shutter{
+    /*background-color: orange;*/
+    background-image: url('/bkgrd_05.jpg');
+    background-size: cover;
+    position: relative;
+}
+#shutter .description{
+    position: absolute;
+    z-index:1;
+}
+#shutterimage_one{
+    width:600px;
+    position: absolute;
+    top:50px;
+    right:420px;
+
+}
+#shutterimage_two{
+    width:600px;
+    position: absolute;
+    bottom:50px;
+    right:50px;
+    /*bottom:30px;*/
+    /*border:1px red solid;*/
+
+}
+
+/*---SHUTTER ENDS------------------------------------------*/
+/*---APERTURE STARTS------------------------------------------*/
+
+#aperture{
+    background-image: url('/bkgrd_06.jpg');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+#aperture .description{
+    align-self: flex-end;
+    /*border:1px red solid;*/
+}
+
+#apertureimage_one{
+    width:600px;
+    position: absolute;
+    top:50px;
+    left:420px;
+
+}
+#apertureimage_two{
+    width:600px;
+    position: absolute;
+    bottom:50px;
+    left:50px;
+    /*bottom:30px;*/
+    /*border:1px red solid;*/
+
+}
+
+/*---APERTURE ENDS------------------------------------------*/
+/*---ISO STARTS------------------------------------------*/
+#iso{
+    /*background-color: green;*/
+    background-image: url('/bkgrd_03.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+#iso .description{
+    z-index:1;
+}
+#isoimage_one{
+    width:600px;
+    position: absolute;
+    top:50px;
+    right:420px;
+
+}
+#isoimage_two{
+    width:600px;
+    position: absolute;
+    bottom:50px;
+    right:50px;
+    /*bottom:30px;*/
+    /*border:1px red solid;*/
+
+}
+
+/*---ISO STARTS------------------------------------------*/
+/*---STARTS------------------------------------------*/
+#view_photos{
+    background-image: url('/bkgrd_04.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#text_wrapper{
+    /*cursor: pointer;*/
+    position: absolute;
+    top:250px;
+    left:200px;
+}
+
+#view_photos h1{
+    width:600px;
+    line-height: 1;
+    text-shadow: 2px 2px 5px black;
+}
+
+
+.text-two{
+    padding-left: 20px;
+}
+
+.text-three{
+    display: flex;
+    flex-direction: row;
+    width:450px;
+    /*border:1px red solid;*/
+    padding-left: 50px;
+}
+
+.text-three #arrow:hover{
+    color:#ff8080;
+    transform: translateX(15px);
+    transition-duration: .5s;
+    transition-timing-function: linear;
+}
+
+/*---END------------------------------------------*/
+
+
+
+
+
+#footer{
+    width:90%;
+    position: absolute;
+    /*border:1px solid red;*/
+    align-self: center;
+    bottom:0px;
+
+}
+
+

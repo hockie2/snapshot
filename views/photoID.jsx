@@ -11,6 +11,8 @@ class PhotoID extends React.Component {
 
 
     var post_comment = "/gallery/"+this.props.photoID +"?_method=POST";
+    // var post_comment = "/hello";
+
 
     // console.log(this.props.comments);
     let comments = this.props.comments.map(comment=>{
@@ -45,7 +47,7 @@ class PhotoID extends React.Component {
                         </div>
                         <div className="details_wrapper">
                             <span className="details"><box-icon name='camera' ></box-icon>{this.props.photos.camera}</span>
-                            <span className="details"><box-icon name='aperture'></box-icon>{this.props.photos.aperature}</span>
+                            <span className="details"><box-icon name='aperture'></box-icon>{this.props.photos.aperture}</span>
                             <span className="details"><box-icon name='timer'></box-icon>{this.props.photos.shutter}</span>
                             <span className="details"><box-icon name='disc' ></box-icon>{this.props.photos.iso}</span>
                         </div>
@@ -56,9 +58,9 @@ class PhotoID extends React.Component {
                 <div className="main_comment_wrapper">
                     <div className="comment_input">
                         <img src={cloudinary.url(this.props.userProfilePic)} />
-                        <form action={post_comment} method="POST" id="new_comment">
-                            <textarea rows="5" cols="20" name="comment_textarea" id="comment_textarea"></textarea>
-                        </form>
+
+                            <textarea rows="5" cols="20" name="comment_textarea" id="comment_textarea" public_id={this.props.userProfilePic} photoId={this.props.photos.id} ></textarea>
+
                     </div>
                     <div className="comments_wrapper">
                         {comments}
@@ -68,6 +70,7 @@ class PhotoID extends React.Component {
           <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
           <script src="/script.js"></script>
 
+
           </body>
       </html>
     );
@@ -75,3 +78,4 @@ class PhotoID extends React.Component {
 }
 
 module.exports = PhotoID;
+                        // <form action={post_comment} method="POST" id="new_comment">

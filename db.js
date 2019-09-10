@@ -48,6 +48,39 @@ pool.on('error', function (err) {
 });
 
 
+///////////////////////////////////////////////////////////////
+
+const jsonfile = require('jsonfile');
+const file = "data.json";
+
+
+const express = require('express');
+const app = express();
+
+
+// this line below, sets a layout look to your express project
+const reactEngine = require('express-react-views').createEngine();
+app.engine('jsx', reactEngine);
+
+// this tells express where to look for the view files
+app.set('views', __dirname + '/views');
+
+// this line sets react to be the default view engine
+app.set('view engine', 'jsx');
+
+
+const methodOverride = require('method-override')
+app.use(methodOverride('_method'));
+
+
+
+
+const cookieParser = require('cookie-parser')
+app.use(cookieParser());
+
+
+
+
 
 /*
  * ===================================================

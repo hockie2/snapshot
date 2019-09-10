@@ -22,7 +22,7 @@ class EditPhoto extends React.Component {
               <Navbar/>
             </header>
             <div className="main_content_wrapper">
-                <h3>EDIT PHTOT</h3>
+
 
               <div className="main_cards_wrapper">
                     <img src={cloudinary.url(this.props.photos.public_id)} />

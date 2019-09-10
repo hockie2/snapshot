@@ -63,11 +63,20 @@ module.exports = (db) => {
 
         db.home.getDashPhotos(username,(error, callback) => {
             // console.log(callback);
-        let data ={
-            photos:callback,
-            username:username
-        }
-        response.render('dashboard',data);
+            if(callback){
+                let data ={
+                    photos:callback,
+                    username:username
+                }
+            response.render('dashboard',data);
+
+            }
+            else{
+                let data ={
+                    username:username
+                }
+            response.render('dashboard',data);
+            }
 
         })
 
@@ -78,7 +87,8 @@ module.exports = (db) => {
         const username = request.cookies.username;
         const photoID = request.params.id;
 
-    db.accounts.checkUser(username,(error, callbackUser) => {
+        if(username){
+             db.accounts.checkUser(username,(error, callbackUser) => {
         // console.log(callbackUser[0].id)
 
         db.home.getPhotoID(photoID,(error, callback) => {
@@ -86,6 +96,7 @@ module.exports = (db) => {
 
             db.home.getPhotoIDcomments(photoID,(error, callbackComments) => {
 
+                    // console.log(callback)
                 let data ={
                     userProfilePic:callbackUser[0].public_id,
                     photos:callback[0],
@@ -98,7 +109,28 @@ module.exports = (db) => {
                 })
 
             })
-    })
+        })
+    }
+    else{
+         db.home.getPhotoID(photoID,(error, callback) => {
+            // console.log(callback);
+
+            db.home.getPhotoIDcomments(photoID,(error, callbackComments) => {
+
+                let data ={
+                    photos:callback[0],
+                    comments:callbackComments,
+                    photoID:photoID
+
+                }
+                response.render('photoID',data);
+
+                })
+
+            })
+    }
+
+
   };
 //////////////////////////////////////////////////////////////////////////////
 
@@ -167,7 +199,7 @@ let addPhoto = (request, response) => {
   };
 //////////////////////////////////////////////////////////////////////////////
 let deletePhoto = (request, response) => {
-
+    console.log("DELETING")
     const username = request.cookies.username;
     const photoID = request.params.id;
 
@@ -233,9 +265,7 @@ let postComment = (request, response) => {
 
     const username = request.cookies.username;
     const photoID = request.params.id;
-    const comment = request.body.comment_textarea;
-
-    // console.log(comment);
+    const comment = request.params.message;
 
     db.home.postComment(photoID,username,comment, (error, callback) => {
         if (error) {
@@ -243,14 +273,12 @@ let postComment = (request, response) => {
             response.send("Error posting comment");
         }
         else {
-            //response.send("Tweed - Successful")
-            response.redirect("/gallery/"+`${photoID}`)
-            // response.render("myHomePage")
+            response.send(callback[0])
         }
     })
 }
 
-
+//////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -275,7 +303,10 @@ let postComment = (request, response) => {
     editPhoto:editPhoto,
     updatePhoto:updatePhoto,
 
-    postComment:postComment
+    postComment:postComment,
+    // getAllComments:getAllComments
+
+    // getAllComments:getAllComments
 
 
 

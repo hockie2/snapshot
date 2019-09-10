@@ -37,7 +37,7 @@ form{
     justify-content: center;
     color: white;
     font-family: 'Bevan', cursive;
-    background-color: #2e2e2e;
+    background-color: rgba(46,46,46,.8) ;
     position: absolute;
     right:40px;
     box-shadow: 0 0 20px black;
@@ -48,7 +48,7 @@ p{
     font-size: 1.1em;
 }
 input{
-    background-color: grey;
+    background-color: #5e5e5e;
     border:1px #00dcff solid;
     color: white;
     font-family: 'Abel', sans-serif;

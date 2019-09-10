@@ -12,6 +12,9 @@ body{
     margin-top: 30px;
 }
 
+.name{
+    align-self: flex-start;
+}
 a{
     text-decoration: none;
     color:black;

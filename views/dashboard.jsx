@@ -4,15 +4,18 @@ const cloudinary = require('cloudinary').v2;
 var Navbar = require('./components/navbar.jsx');
 
 class Gallery extends React.Component {
+
+
   render() {
     // console.log(this.props.photos.id);
         // var edit_url = "/gallery/"+this.props.photos.id + "/edit";
         // var delete_url = "/gallery/"+this.props.photos.id +"?_method=DELETE";
 
-    const cards = this.props.photos.map(photo =>{
+    let cards = <div>No Photos</div>;
 
-
-         return (
+    if(this.props.photos){
+         cards = this.props.photos.map(photo =>{
+             return (
 
                 <div className = "cardBox_wrapper">
                     <a href={`/gallery/${photo.id}`}>
@@ -22,20 +25,20 @@ class Gallery extends React.Component {
                         </div>
                     </a>
                     <div className="controls">
-                        <form action={"/gallery/"+photo.id + "/edit"} method="PUT" id="editform">
-                            <button type="submit" value="Edit" id="edit" >Edit</button>
+                        <form action={"/gallery/"+ photo.id + "/edit"} method="PUT" id="editform">
+                            <button type="submit" value="Edit" id="edit">Edit</button>
                         </form>
                         <span>|</span>
 
-                            <button type="submit" value="Delete" id="delete" >Delete</button>
-                        <form action={"/gallery/"+photo.id +"?_method=DELETE"} method="POST" id="deleteform"/>
+                        <button type="submit" value="Delete" className="delete" >Delete</button>
+                        <form action={"/gallery/"+ photo.id +"?_method=DELETE"} method="POST" id="deleteform"/>
+
 
                     </div>
                 </div>
-
-
-        )
-    })
+            )
+        })
+    }
 
     return (
       <html>
@@ -50,8 +53,10 @@ class Gallery extends React.Component {
               <Navbar/>
             </header>
             <div className="main_content_wrapper">
-                <h3>Photographer</h3>
-                <h5>{this.props.username}</h5>
+                <div className="name">
+                    <h3>Photographer</h3>
+                    <h5>{this.props.username}</h5>
+                </div>
               <div className="main_cards_wrapper">
                   {cards}
               </div>

@@ -1,5 +1,5 @@
 body{
-    background-image: url('https://images.squarespace-cdn.com/content/v1/5a2e2b636f4ca325a6230da9/1551530001907-G2ZC921FFYXK9PEYKVD4/ke17ZwdGBToddI8pDm48kKtijf5x5S0rIV7X_qDH3dB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UaZbTVdO5VSPAOxIcVIbmIFLIFeVDbQiz7iBIgNCzklBDD2o6CESiqIlH5ssNFrtmA/Dark+Reign.jpg?format=1000w');
+    background-image: url('/bkgrd_07.jpg');
     /*background-color: pink;*/
     background-size:cover;
 }
