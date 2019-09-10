@@ -96,7 +96,7 @@ module.exports = (db) => {
 
             db.home.getPhotoIDcomments(photoID,(error, callbackComments) => {
 
-                    // console.log(callback)
+                    // console.log(callbackComments)
                 let data ={
                     userProfilePic:callbackUser[0].public_id,
                     photos:callback[0],

@@ -140,3 +140,18 @@ box-icon{
 .controls button:focus{
     outline:0;
 }
+
+
+#back{
+    width: 100%;
+    height: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Abel', sans-serif;
+    text-decoration: none;
+    /*border:1px solid red;*/
+}

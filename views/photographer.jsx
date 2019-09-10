@@ -40,6 +40,7 @@ class Photographer extends React.Component {
               <div className="main_cards_wrapper">
                   {cards}
               </div>
+              <a href="javascript:history.back(-1)" id="back"><box-icon name='left-arrow' type='solid' color='#ffffff' ></box-icon>BACK</a>
           </div>
           <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
           <script src="/script.js"></script>

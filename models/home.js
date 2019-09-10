@@ -97,7 +97,7 @@ let getPhotoID = (photoID, callback) => {
 let getPhotoIDcomments = (photoID, callback) => {
 
     const id_query = `
-                    SELECT comments.comment,users.public_id FROM comments
+                    SELECT comments.comment,users.public_id, users.username FROM comments
                     INNER JOIN users ON users.id = comments.comment_by_user
                     INNER JOIN photos ON photos.id = comments.belongs_to_photo
                     WHERE comments.belongs_to_photo = '${photoID}'`;

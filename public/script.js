@@ -110,10 +110,8 @@ if(document.cookie){
             request.addEventListener("load", responseHandler);
 
             // ready the system by calling open, and specifying the url
-            // request.open("GET", "https://swapi.co/api/people/1");
             request.open("POST", url);
 
-            // request2.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             // send the request
             request.send();
 

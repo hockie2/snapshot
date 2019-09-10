@@ -14,10 +14,10 @@ class PhotoID extends React.Component {
     // var post_comment = "/hello";
 
 
-    // console.log(this.props.comments);
+    console.log(this.props.comments);
     let comments = this.props.comments.map(comment=>{
         return <div className="comment_box">
-                    <img src={cloudinary.url(comment.public_id)} />
+                    <a href={'/photographer/'+ comment.username}><img src={cloudinary.url(comment.public_id)} /></a>
                     <div className="comment">{comment.comment}</div>
                 </div>
     })
@@ -58,9 +58,7 @@ class PhotoID extends React.Component {
                 <div className="main_comment_wrapper">
                     <div className="comment_input">
                         <img src={cloudinary.url(this.props.userProfilePic)} />
-
-                            <textarea rows="5" cols="20" name="comment_textarea" id="comment_textarea" public_id={this.props.userProfilePic} photoId={this.props.photos.id} ></textarea>
-
+                        <textarea rows="5" cols="20" name="comment_textarea" id="comment_textarea" public_id={this.props.userProfilePic} photoId={this.props.photos.id} ></textarea>
                     </div>
                     <div className="comments_wrapper">
                         {comments}
