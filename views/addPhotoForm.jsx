@@ -15,7 +15,7 @@ class AddPhotoForm extends React.Component {
             <link href="https://fonts.googleapis.com/css?family=Abel|Caveat|Bevan&display=swap" rel="stylesheet"/>
             <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
             <link rel="stylesheet" type="text/css" href="/css/home.css"/>
-            <link rel="stylesheet" type="text/css" href="/css/AddPhotoForm.css"/>
+            <link rel="stylesheet" type="text/css" href="/css/addphotoform.css"/>
 
         </head>
         <body>
