@@ -2,6 +2,7 @@
 
 # Project_04 - SnapShot
 https://snapshotbeginner.herokuapp.com
+<br />
 SnapShot - A simple photography website to inspire beginners with the basics of photography. Users can upload photographs to share with others. This is also a site to showcase my css animation and design.
 
 
