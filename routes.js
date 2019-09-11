@@ -20,10 +20,6 @@ module.exports = (app, allModels) => {
   const accountsControllerCallbacks = require('./controllers/accounts')(allModels);
 
 
-
-  // app.get('/pokemons', pokemonControllerCallbacks.index);
-  //app.get('/pokemons/:id', pokemons.getPokemon);
-
     app.get('/', homeControllerCallbacks.home);
 
     app.get('/register', accountsControllerCallbacks.showRegisterForm);
