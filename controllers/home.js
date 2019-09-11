@@ -210,7 +210,8 @@ let deletePhoto = (request, response) => {
 
             } else {
                 //response.send("Tweed - Successful")
-                response.redirect("/dashboard")
+                // response.redirect("/dashboard")
+                response.send(callback[0]);
             }
     })
 }

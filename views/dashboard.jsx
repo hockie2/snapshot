@@ -17,7 +17,7 @@ class Gallery extends React.Component {
          cards = this.props.photos.map(photo =>{
              return (
 
-                <div className = "cardBox_wrapper">
+                <div className = "cardBox_wrapper" id={'photo'+ photo.id}>
                     <a href={`/gallery/${photo.id}`}>
                         <div className="photo_wrapper">
                             <img src={cloudinary.url(photo.public_id)} />
@@ -30,8 +30,7 @@ class Gallery extends React.Component {
                         </form>
                         <span>|</span>
 
-                        <button type="submit" value="Delete" className="delete" >Delete</button>
-                        <form action={"/gallery/"+ photo.id +"?_method=DELETE"} method="POST" id="deleteform"/>
+                        <button type="submit" value="Delete" className="delete" photoID={photo.id}>Delete</button>
 
 
                     </div>
@@ -70,3 +69,4 @@ class Gallery extends React.Component {
 }
 
 module.exports = Gallery;
+                        // <form action={"/gallery/"+ photo.id +"?_method=DELETE"} method="POST" id="deleteform"/>
