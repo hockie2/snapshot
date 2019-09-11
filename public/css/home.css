@@ -129,14 +129,14 @@ h1{
     z-index:1;
 }
 #shutterimage_one{
-    width:600px;
+    width:40%;
     position: absolute;
     top:50px;
     right:420px;
 
 }
 #shutterimage_two{
-    width:600px;
+    width:40%;
     position: absolute;
     bottom:50px;
     right:50px;
@@ -163,14 +163,14 @@ h1{
 }
 
 #apertureimage_one{
-    width:600px;
+    width:40%;
     position: absolute;
     top:50px;
     left:420px;
 
 }
 #apertureimage_two{
-    width:600px;
+    width:40%;
     position: absolute;
     bottom:50px;
     left:50px;
@@ -196,14 +196,14 @@ h1{
     z-index:1;
 }
 #isoimage_one{
-    width:600px;
+    width:40%;
     position: absolute;
     top:50px;
     right:420px;
 
 }
 #isoimage_two{
-    width:600px;
+    width:40%;
     position: absolute;
     bottom:50px;
     right:50px;

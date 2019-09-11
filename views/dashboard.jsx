@@ -27,7 +27,7 @@ class Gallery extends React.Component {
                         </form>
                         <span>|</span>
 
-                        <button type="submit" value="Delete" className="delete" photoID={photo.id}>Delete</button>
+                        <button type="submit" value="Delete" className="delete" photoId={photo.id}>Delete</button>
 
 
                     </div>

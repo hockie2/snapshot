@@ -140,7 +140,7 @@ if(deletebuttonArray.length > 0){
 
             var result = confirm("Are you sure to delete?");
 
-            let photoId = event.target.getAttribute("photoID");
+            let photoId = event.target.getAttribute("photoId");
 
             if(result === true){
                 var deleteResponseHandler = function() {
