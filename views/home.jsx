@@ -1,10 +1,10 @@
 var React = require("react");
 const cloudinary = require('cloudinary').v2;
-// var THREE = require('three');
+var THREE = require('three');
 
 var Navbar = require('./components/navbar.jsx');
 // var ThreeJS = require('./components/threejs.jsx');
-
+// import {App} from './components/threejs.jsx';
 
 class Home extends React.Component {
 
@@ -12,6 +12,7 @@ class Home extends React.Component {
   render() {
 
     // console.log(this.props.username);
+                {/*<img src="/camera_01.png" id="header_img"/>*/}
 
     return (
       <html>
@@ -30,10 +31,11 @@ class Home extends React.Component {
 
           {/*<img src={cloudinary.url(this.props.profile_pic)}/>*/}
           <div className="main_content_wrapper">
-              <div className="threeDcamera_wrapper">
-                <img src="/camera_01.png" id="header_img"/>
+              <div id="threeDcamera_wrapper">
+                <iframe title="A 3D model" src="https://sketchfab.com/models/00977989eef4469bb813d4637a6375b1/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true">
+                </iframe>
               </div>
-
+              <div id="scroll"><div>Scroll down</div><img src="/arrow_down.gif" style={{width:"30px"}}/></div>
               <div className="tabs" id="shutter">
                 <div className="description">
                     <h1 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">SHUTTER SPEED</h1>
@@ -43,6 +45,7 @@ class Home extends React.Component {
                     <img src='https://www.shutterbug.com/images/styles/600_wide/public/promoss71017.jpg' id="shutterimage_one" data-aos="fade-left" data-aos-duration="3000" ata-aos-delay="50"/>
                 <img src='https://najanorazman.weebly.com/uploads/5/0/5/4/50540085/3661865_orig.jpg' id="shutterimage_two" data-aos="fade-up" data-aos-duration="3000"/>
               </div>
+
               <div className="tabs" id="aperture">
                 <div className="description">
                     <h1 data-aos="fade-down" data-aos-duration="1000" data-aos-easing="linear" >APERTURE</h1>
@@ -74,13 +77,9 @@ class Home extends React.Component {
                     </div>
                 </div>
 
-
-
-
-
-
           </div>
             <script>AOS.init();</script>
+            <script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
             <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
             <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
             <script src="/script.js"></script>

@@ -7,11 +7,8 @@ class Gallery extends React.Component {
 
 
   render() {
-    // console.log(this.props.photos.id);
-        // var edit_url = "/gallery/"+this.props.photos.id + "/edit";
-        // var delete_url = "/gallery/"+this.props.photos.id +"?_method=DELETE";
 
-    let cards = <div>No Photos</div>;
+    let cards = <h3>Start adding your works of art</h3>;
 
     if(this.props.photos){
          cards = this.props.photos.map(photo =>{
