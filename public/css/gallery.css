@@ -75,3 +75,14 @@ box-icon{
     margin-right: 5px;
 }
 
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    font-family: 'Abel', sans-serif;
+}

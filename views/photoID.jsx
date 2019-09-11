@@ -49,7 +49,7 @@ class PhotoID extends React.Component {
                             <span className="details"><box-icon name='camera' ></box-icon>{this.props.photos.camera}</span>
                             <span className="details"><box-icon name='aperture'></box-icon>{this.props.photos.aperture}</span>
                             <span className="details"><box-icon name='timer'></box-icon>{this.props.photos.shutter}</span>
-                            <span className="details"><box-icon name='disc' ></box-icon>{this.props.photos.iso}</span>
+                            <span className="details"><img src="/iso.png" style={{width:"20px", marginRight:"5px"}}/>{this.props.photos.iso}</span>
                         </div>
                     </div>
                     <a href="javascript:history.back(-1)" id="back"><box-icon name='left-arrow' type='solid' color='#ffffff' ></box-icon>BACK</a>

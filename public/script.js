@@ -1,12 +1,10 @@
 console.log("we are in the browser");
 
 
-// let cookie = request.cookie["loggedin"]
-// console.log(cookie)
+//if login/////////////////////////////////////////////////////////////////////////////
 
     let loginButtonArray = document.querySelectorAll('.loginbutton')
     let registerButtonArray = document.querySelectorAll('.registerButton')
-    // console.log(loginButtonArray)
 
     if(document.cookie){
 
@@ -30,13 +28,9 @@ console.log("we are in the browser");
         })
         }
 
-        // let addphoto = document.querySelector('#addphoto');
-        // let dashboard = document.querySelector('#dashboard');
         let navbarArray = document.querySelectorAll('.nav_left');
 
         if(!document.cookie){
-            // addphoto.remove();
-            // dashboard.remove();
             navbarArray.forEach(navbar=>{
             navbar.innerHTML=`<a className="active" href="/"><div className="nav_button">Home</div></a>
                                 <a href="/gallery" ><div className="nav_button">Gallery</div></a>`
@@ -57,8 +51,6 @@ if(document.cookie){
           var el = this;
           setTimeout(function(){
             el.style.cssText = 'height:auto; padding:5px';
-            // for box-sizing other than "content-box" use:
-            // el.style.cssText = '-moz-box-sizing:content-box';
             el.style.cssText = 'height:' + el.scrollHeight + 'px';
           },0);
         }
@@ -67,19 +59,14 @@ if(document.cookie){
 
         function submitOnEnter(event){
             if(event.which === 13){
-            // alert('HELLOOOOOOO')
-                // event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
-                // event.target.form.submit();
+
             let photoId = event.target.getAttribute("photoId");
             let public_id = event.target.getAttribute("public_id")
-            console.log(event.target)
+            // console.log(event.target)
 
              // what to do when we receive the request
             var responseHandler = function() {
 
-                // console.log("response text", this.responseText);
-                // console.log("status text", this.statusText);
-                // console.log("status code", this.status);
                 let response = JSON.parse(this.responseText)
                 // console.log(response.comment)
 
@@ -118,8 +105,6 @@ if(document.cookie){
             event.preventDefault(); // Prevents the addition of a new line in the text field (not needed in a lot of cases)
             event.target.value = "";
 
-
-
             }
 
         }
@@ -135,7 +120,6 @@ else{
 
 
 //////////////////////////////////////////////////////////////////////////////////////
-
 // let editbutton = document.querySelector('#edit');
 // if(editbutton){
 //     editbutton.addEventListener('click', function(event){
@@ -144,22 +128,49 @@ else{
 //     })
 // }
 //////////////////////////////////////////////////////////////////////////////////////
+//DELETE button in photoID page
+
 let deletebuttonArray = document.querySelectorAll('.delete');
 if(deletebuttonArray.length > 0){
 
     deletebuttonArray.forEach(deletebutton => {
-        deletebutton.addEventListener('click', function(event){
+        deletebutton.addEventListener('click', deleteOnSubmit);
+
+        function deleteOnSubmit(event){
+
             var result = confirm("Are you sure to delete?");
-            // console.log(result)
-            // debugger;
+
+            let photoId = event.target.getAttribute("photoID");
 
             if(result === true){
-                // console.log('HEHEHEHEHEHEHEHE')
-               document.getElementById("deleteform").submit();
+                var deleteResponseHandler = function() {
+
+                let response = JSON.parse(this.responseText)
+                // console.log(response)
+
+                let photowrapper = document.querySelector('#photo'+ photoId)
+                photowrapper.remove()
+                }
+
+            var urlDel = `/gallery/${photoId}/`+'?_method=DELETE';
+            // console.log(urlDel)
+
+            // make a new request
+            var request = new XMLHttpRequest();
+            // listen for the request response
+            request.addEventListener("load", deleteResponseHandler);
+
+            // ready the system by calling open, and specifying the url
+            request.open("POST", urlDel);
+
+            // send the request
+            request.send();
+
             }
-        })
+        }
     })
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -167,7 +178,6 @@ AOS.init({
   duration: 1200,
   easing: 'ease-in-out-back'
 });
-
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
