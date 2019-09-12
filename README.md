@@ -19,5 +19,7 @@ SnapShot - A simple photography website to inspire beginners with the basics of 
 ![alt text](https://dl.dropboxusercontent.com/s/o8dbl4ose577x7r/capture_09112019_142324.jpg?dl=0
 )
 
-
-
+**Inspiring References** <br/>
+Love the CSS in these sites, hence tried to fiddle more with CSS for this project. <br/>
+(http://www.theviq.com.au/) <br/>
+(https://matruecannabis.com/en/experience/party}
