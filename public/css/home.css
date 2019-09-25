@@ -12,12 +12,12 @@ html, body {
 
 }
 
-
 #scroll{
     width:100%;
     height: 8vh;
     font-family: 'Abel', sans-serif;
     color:white;
+    font-size: 1.2em;
     /*border:1px solid red;*/
     display: flex;
     flex-direction: column;
@@ -270,3 +270,155 @@ h1{
 }
 
 
+
+
+
+
+/*  ##Device = Desktops  ##Screen = 1281px to higher resolution desktops*/
+@media (min-width: 1281px) {
+
+  //CSS
+
+}
+
+/*  ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px */
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  //CSS
+
+}
+
+/*  ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  //CSS
+
+}
+
+/*  ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  //CSS
+
+}
+
+/*  ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+
+    .main_content_wrapper {
+        padding:0;
+    }
+    #logo {
+        width: 100%;
+        height: 10px;
+    }
+    #logo img {
+        width: 206px;
+    }
+    #threeDcamera_wrapper {
+        height: 70vh
+    }
+    #scroll {
+        height: 15vh;
+    }
+    #shutterimage_one {
+        top: 17px;
+        right: 85px;
+    }
+    #apertureimage_one {
+        top: 16px;
+        left: 33px;
+    }
+    #apertureimage_two {
+        bottom: 20px;
+    }
+    #aperture .description{
+        position: absolute;
+        right: 124px;
+    }
+    #isoimage_one {
+        top: 12px;
+        right: 118px;
+    }
+    #isoimage_two {
+        bottom: 24px;
+    }
+    #text_wrapper {
+        top: 23px;
+        left: 47px;
+    }
+}
+
+/*  ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px */
+@media (min-width: 320px) and (max-width: 480px) {
+
+    #nav_wrapper{
+        font-size: .9em;
+    }
+
+    .main_content_wrapper{
+        width: 100%;
+    }
+    .description{
+        width:64vw;
+    }
+    .tabs p{
+        font-size: 3.5vw
+    }
+    #shutterimage_one{
+        right:9px;
+        top:300px;
+        width:75%;
+    }
+    #shutterimage_two{
+        bottom:20px;
+        right:70px;
+        width:75%;
+    }
+    #aperture .description{
+        left:9px;
+        bottom:200px;
+        position:absolute;
+    }
+    #apertureimage_one{
+        left:15px;
+        top:18px;
+        width:75%;
+    }
+    #apertureimage_two{
+        bottom:33px;
+        width:75%;
+    }
+    #isoimage_one{
+        width:75%;
+        right:17px;
+        top:30px;
+    }
+    #isoimage_two{
+        width:75%;
+        bottom:17px;
+    }
+
+    #text_wrapper{
+        left:20px;
+        width:90vw;
+        /*border: 3px solid red*/
+    }
+
+  .description h1{
+    /*font-size: 5em;*/
+  }
+
+  #view_photos h1{
+    font-size: 4.5em;
+    width: 100%;
+  }
+  .text-three{
+    width:372px;
+  }
+
+  #footer{
+    width:100%;
+  }
+
+}

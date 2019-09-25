@@ -46,14 +46,5 @@ module.exports = (app, allModels) => {
 
     app.get('/photographer/:username', homeControllerCallbacks.photographer);
 
-    // app.get('/comments', homeControllerCallbacks.getAllComments);
-
-
-    // app.get('/gallery/:id/delete', homeControllerCallbacks.getDeletePhoto);
-
-
-
-    // app.get('/hello', homeControllerCallbacks.getAllComments);
-
 
 };

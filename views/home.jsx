@@ -17,7 +17,7 @@ class Home extends React.Component {
     return (
       <html>
         <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <link href="https://fonts.googleapis.com/css?family=Abel|Anton|Caveat|Bevan&display=swap" rel="stylesheet"/>
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
             <link rel="stylesheet" type="text/css" href="/css/navbar.css"/>
@@ -32,12 +32,12 @@ class Home extends React.Component {
 
           {/*<img src={cloudinary.url(this.props.profile_pic)}/>*/}
           <div className="main_content_wrapper">
-          <div id="logo"><img src="/logo2.png"/></div>
+            <div id="logo"><img src="/logo2.png"/></div>
               <div id="threeDcamera_wrapper">
                 <iframe title="A 3D model" src="https://sketchfab.com/models/00977989eef4469bb813d4637a6375b1/embed" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true">
                 </iframe>
               </div>
-              <div id="scroll"><div>Scroll down</div><img src="/arrow_down.gif" style={{width:"30px"}}/></div>
+              <div id="scroll"><div>Scroll Down</div><img src="/arrow_down.gif" style={{width:"30px"}}/></div>
               <div className="tabs" id="shutter">
                 <div className="description">
                     <h1 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">SHUTTER SPEED</h1>
@@ -78,7 +78,6 @@ class Home extends React.Component {
                         <Navbar/>
                     </div>
                 </div>
-
           </div>
             <script>AOS.init();</script>
             <script src="//cdn.rawgit.com/mrdoob/three.js/master/build/three.min.js"></script>
