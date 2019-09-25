@@ -290,16 +290,102 @@ h1{
 
 /*  ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
-
-  //CSS
+    h1{
+        font-size: 6em
+    }
+    .description{
+        width:36vw;
+    }
+    .tabs p {
+        font-size: 3vw;
+    }
+    #shutterimage_one {
+        width:55%;
+        top: 393px;
+        right: 21px;
+    }
+    #shutterimage_two {
+        width: 55%;
+        right: 266px;
+    }
+    #aperture .description {
+        position: absolute;
+        right: 451px;
+        bottom: 150px;
+    }
+    #apertureimage_one {
+        width: 55%;
+        left: 280px;
+    }
+    #apertureimage_two {
+        width: 55%;
+        bottom: 120px;
+        left: 336px;
+    }
+    #isoimage_one {
+        width: 55%;
+        top: 50px;
+        right: 71px;
+    }
+    #isoimage_two {
+        width: 55%;
+    }
+    #view_photos h1 {
+        width: 100%;
+    }
+    #text_wrapper {
+        left: 48px;
+    }
+    .text-three {
+        width: 539px;
+    }
 
 }
 
 /*  ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-  //CSS
+    #logo {
+        height: 0;
+    }
+    #logo img {
+        width: 212px;
+    }
+    #threeDcamera_wrapper {
+        height: 70vh;
+    }
+    #scroll {
+        height: 17vh;
+    }
+    #shutterimage_one {
+        top: 32px;
+        right: 174px;
+    }
+    #shutterimage_two {
+        bottom: 18px;
+        right: 22px;
+    }
 
+    #apertureimage_one {
+        top: 12px;
+        left: 95px;
+    }
+    #aperture .description {
+        position: absolute;
+        right: 89px;
+    }
+    #isoimage_one {
+        top: 22px;
+        right: 172px;
+    }
+    #isoimage_two {
+        bottom: 21px;
+        right: 26px;
+    }
+    #text_wrapper {
+        top: 33px;
+        left: 71px;
+    }
 }
 
 /*  ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px */
@@ -346,6 +432,9 @@ h1{
     #text_wrapper {
         top: 23px;
         left: 47px;
+    }
+    #view_photos h1 {
+        width: 500px;
     }
 }
 
