@@ -9,6 +9,7 @@ html, body {
     scroll-margin:300px 0;
     /*scroll-padding:100px;*/
     /*overflow-y: scroll;*/
+    /*overflow-x: auto;*/
 
 }
 
@@ -297,7 +298,7 @@ h1{
         width:36vw;
     }
     .tabs p {
-        font-size: 3vw;
+        font-size: 2vw;
     }
     #shutterimage_one {
         width:55%;
@@ -357,28 +358,41 @@ h1{
     #scroll {
         height: 17vh;
     }
+    .tabs p {
+        font-size: 1.8vw;
+    }
     #shutterimage_one {
+        width: 35%;
         top: 32px;
         right: 174px;
     }
     #shutterimage_two {
+        width: 35%;
         bottom: 18px;
         right: 22px;
     }
-
     #apertureimage_one {
+        width: 35%;
         top: 12px;
-        left: 95px;
+        left: 40px;
+    }
+    #apertureimage_two {
+        width: 35%;
+        bottom: 25px;
+        left: 125px;
     }
     #aperture .description {
         position: absolute;
         right: 89px;
+        bottom:100px;
     }
     #isoimage_one {
+        width:35%;
         top: 22px;
-        right: 172px;
+        right: 252px;
     }
     #isoimage_two {
+        width:35%;
         bottom: 21px;
         right: 26px;
     }
@@ -445,6 +459,11 @@ h1{
         font-size: .9em;
     }
 
+    #threeDcamera_wrapper {
+        /*width:;*/
+    }
+
+
     .main_content_wrapper{
         width: 100%;
     }
@@ -452,7 +471,7 @@ h1{
         width:64vw;
     }
     .tabs p{
-        font-size: 3.5vw
+        font-size: 4vw
     }
     #shutterimage_one{
         right:9px;
@@ -490,7 +509,7 @@ h1{
 
     #text_wrapper{
         left:20px;
-        width:90vw;
+        width:80vw;
         /*border: 3px solid red*/
     }
 
@@ -499,11 +518,11 @@ h1{
   }
 
   #view_photos h1{
-    font-size: 4.5em;
+    font-size: 3.7em;
     width: 100%;
   }
   .text-three{
-    width:372px;
+    width:300px;
   }
 
   #footer{

@@ -63,7 +63,7 @@ class Home extends React.Component {
                     <p data-aos="fade-up" data-aos-duration="2000">ISO is your <span style={{fontWeight:"900", color:"#f73838"}}>camera sensor’s sensitivity to light.</span> The more your ISO increases, the more your camera’s sensor will boost the brightness of the image. At a certain point, visible “noise” or “grain” will be added to compensate for the lack of light, so try to keep your ISO as low as possible to reduce the amount of distortion, while going high enough to actually see your subject.
                     </p>
                 </div>
-                <img src='https://www.exposureguide.com/media/iso-sensitivity-comparison.jpg?x51595' id="isoimage_one" data-aos="fade-left" data-aos-duration="3000" ata-aos-delay="50"/>
+                <img src='https://ugc.kn3.net/i/c_960x720/https://mott.pe/noticias/wp-content/uploads/2018/05/fotografiar-con-iso-alto-cuando-tienes-una-iluminacion-baja.jpg' id="isoimage_one" data-aos="fade-right" data-aos-duration="3000" ata-aos-delay="50"/>
                 <img src='https://www.allinebelotto.com.br/wp-content/uploads/2017/01/foto-1-iso.jpg' id="isoimage_two" data-aos="fade-up" data-aos-duration="3000"/>
               </div>
                 <div className="tabs" id="view_photos">
