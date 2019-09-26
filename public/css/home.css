@@ -134,7 +134,7 @@ h1{
     position: absolute;
     top:50px;
     right:420px;
-
+    z-index: 1
 }
 #shutterimage_two{
     width:40%;
@@ -404,7 +404,9 @@ h1{
 
 /*  ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px */
 @media (min-width: 481px) and (max-width: 767px) {
-
+    #nav_wrapper {
+        font-size: 19.8px;
+    }
     .main_content_wrapper {
         padding:0;
     }
@@ -456,14 +458,11 @@ h1{
 @media (min-width: 320px) and (max-width: 480px) {
 
     #nav_wrapper{
-        font-size: .9em;
+        font-size: .8em;
     }
-
-    #threeDcamera_wrapper {
-        /*width:;*/
+    box-icon{
+        width:50%;
     }
-
-
     .main_content_wrapper{
         width: 100%;
     }
@@ -475,7 +474,7 @@ h1{
     }
     #shutterimage_one{
         right:9px;
-        top:300px;
+        top:340px;
         width:75%;
     }
     #shutterimage_two{
@@ -485,8 +484,9 @@ h1{
     }
     #aperture .description{
         left:9px;
-        bottom:200px;
+        bottom:168px;
         position:absolute;
+        z-index: 1
     }
     #apertureimage_one{
         left:15px;
@@ -514,15 +514,15 @@ h1{
     }
 
   .description h1{
-    /*font-size: 5em;*/
+    font-size: 4.1em;
   }
 
   #view_photos h1{
-    font-size: 3.7em;
+    font-size: 3.1em;
     width: 100%;
   }
   .text-three{
-    width:300px;
+    width:250px;
   }
 
   #footer{

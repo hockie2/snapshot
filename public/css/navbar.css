@@ -19,6 +19,8 @@
   padding: 14px 16px;
   text-decoration: none;
   height:20px;
+  display: flex;
+  align-items: center;
 }
 
 #nav_wrapper a:hover {
@@ -31,16 +33,16 @@
 }
 
 .nav_left{
-   /*float: left;*/
-   display: flex;
-   flex-direction: row;
+    /*float: left;*/
+    display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
 .nav_right{
     /*float: right;*/
     display: flex;
-   flex-direction: row;
+    flex-direction: row;
     align-items: center;
     /*border:1px solid red;*/
 

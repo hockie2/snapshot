@@ -40,11 +40,11 @@ class Home extends React.Component {
               <div id="scroll"><div>Scroll Down</div><img src="/arrow_down.gif" style={{width:"30px"}}/></div>
               <div className="tabs" id="shutter">
                 <div className="description">
-                    <h1 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">SHUTTER SPEED</h1>
+                    <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">SHUTTER SPEED</h1>
                     <p data-aos="fade-up" data-aos-duration="2000">This is the <span style={{fontWeight:"900", color:"#f73838"}}>amount of time that your camera’s shutter is open</span>, exposing light on each frame. <br/>For instance, a shutter set to 1/60 is letting in light at 1/60th of a second during each frame. The higher the shutter speed, the more crisp and “jittery” your footage will look, and the sharper your photos will be.
                     </p>
                 </div>
-                    <img src='https://www.shutterbug.com/images/styles/600_wide/public/promoss71017.jpg' id="shutterimage_one" data-aos="fade-left" data-aos-duration="3000" ata-aos-delay="50"/>
+                    <img src='https://www.shutterbug.com/images/styles/600_wide/public/promoss71017.jpg' id="shutterimage_one" data-aos="fade-right" data-aos-duration="3000" ata-aos-delay="50"/>
                 <img src='https://najanorazman.weebly.com/uploads/5/0/5/4/50540085/3661865_orig.jpg' id="shutterimage_two" data-aos="fade-up" data-aos-duration="3000"/>
               </div>
 
@@ -59,7 +59,7 @@ class Home extends React.Component {
               </div>
               <div className="tabs" id="iso" >
                 <div className="description">
-                    <h1 data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">ISO</h1>
+                    <h1 data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-in-sine">ISO</h1>
                     <p data-aos="fade-up" data-aos-duration="2000">ISO is your <span style={{fontWeight:"900", color:"#f73838"}}>camera sensor’s sensitivity to light.</span> The more your ISO increases, the more your camera’s sensor will boost the brightness of the image. At a certain point, visible “noise” or “grain” will be added to compensate for the lack of light, so try to keep your ISO as low as possible to reduce the amount of distortion, while going high enough to actually see your subject.
                     </p>
                 </div>
