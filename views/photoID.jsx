@@ -3,30 +3,28 @@ const cloudinary = require('cloudinary').v2;
 
 var Navbar = require('./components/navbar.jsx');
 
+// class CommentRowsList extends{
 
+//     postComment(){
+//         //ajax
+//         //setState
+//     }
+//     render(){
+//         <div>
+//         <button onClick={postComment}>Submit</button>
+//        {
 
-class CommentRowsList extends{
+//          this.state.commentsList.map(()=> (<CommentRow></CommentRow>))
+//        }
+//        </div>
+//     }
+// }
+// class CommentRow extends{
 
-    postComment(){
-        //ajax
-        //setState
-    }
-    render(){
-        <div>
-        <button onClick={postComment}>Submit</button>
-       {
+//     render(){
 
-         this.state.commentsList.map(()=> (<CommentRow></CommentRow>))
-       }
-       </div>
-    }
-}
-class CommentRow extends{
-
-    render(){
-
-    }
-}
+//     }
+// }
 class PhotoID extends React.Component {
 
 
