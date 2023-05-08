@@ -95,10 +95,10 @@ app.use(cookieParser());
  */
 
 
-const allHomeModelsFunction = require('../models/home');
+const allHomeModelsFunction = require('./models/home');
 const homeModelsObject = allHomeModelsFunction( pool );
 
-const allAccountModelsFunction = require('../models/accounts');
+const allAccountModelsFunction = require('./models/accounts');
 const accountsModelsObject = allAccountModelsFunction( pool );
 
 
