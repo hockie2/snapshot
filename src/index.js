@@ -1,14 +1,4 @@
-const express = require('express');
-const methodOverride = require('method-override');
-const cookieParser = require('cookie-parser');
-
 /**
- * ===================================
- * Configurations and set up
- * ===================================
- */
-
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -27,9 +17,20 @@ root.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
 
+ */
 
 
 
+
+const express = require('express');
+const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+
+/**
+ * ===================================
+ * Configurations and set up
+ * ===================================
+ */
 
 
 // Init express app

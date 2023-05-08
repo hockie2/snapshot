@@ -8,10 +8,10 @@
     "node": "10.0.0"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "cloudinary": "^1.14.0",
@@ -28,7 +28,7 @@
     "pg": "^7.4.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "5.0.1",
     "three": "^0.152.2"
   },
   "devDependencies": {
