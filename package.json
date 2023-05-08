@@ -2,6 +2,7 @@
   "name": "express-test",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://hockie2.github.io/snapshot/",
   "license": "MIT",
   "engines": {
     "node": "10.0.0"
