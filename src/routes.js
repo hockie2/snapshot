@@ -1,5 +1,5 @@
 var multer = require('multer');
-var upload = multer({ dest: './uploads/' });
+var upload = multer({ dest: '../uploads/' });
 
 module.exports = (app, allModels) => {
 
@@ -16,8 +16,8 @@ module.exports = (app, allModels) => {
    */
 
   // require the controller
-  const homeControllerCallbacks = require('./controllers/home')(allModels);
-  const accountsControllerCallbacks = require('./controllers/accounts')(allModels);
+  const homeControllerCallbacks = require('../controllers/home')(allModels);
+  const accountsControllerCallbacks = require('../controllers/accounts')(allModels);
 
 
     app.get('/', homeControllerCallbacks.home);
